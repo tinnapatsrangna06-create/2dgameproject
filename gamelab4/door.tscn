@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxb7yvpr5q8jt"]
+
+[ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="1_v6xrn"]
+[ext_resource type="Script" uid="uid://ccltp804dow5g" path="res://door.gd" id="2_0phs7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
+size = Vector2(64, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5njw"]
+size = Vector2(67.5, 127)
+
+[node name="Door" type="Sprite2D"]
+texture = ExtResource("1_v6xrn")
+region_enabled = true
+region_rect = Rect2(384.319, 320.629, 63.5485, 127.007)
+script = ExtResource("2_0phs7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="DoorCollision" type="CollisionShape2D" parent="StaticBody2D"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_50cdl")
+
+[node name="CloseDoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloseDoor"]
+position = Vector2(66.25, -0.5)
+shape = SubResource("RectangleShape2D_y5njw")
+
+[connection signal="body_entered" from="CloseDoor" to="." method="_on_body_entered"]
