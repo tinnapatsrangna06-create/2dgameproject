@@ -33,11 +33,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4sts"]
-radius = 27.0
-height = 66.0
+radius = 48.0
+height = 196.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvbjh"]
-size = Vector2(58, 82.5)
+size = Vector2(110, 160.25)
 
 [sub_resource type="Curve" id="Curve_m2jh0"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -56,21 +56,21 @@ max_jump_count = 10
 double_jump = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-12, 172)
-scale = Vector2(2.26784, 1.51523)
+position = Vector2(0.999996, 80)
+scale = Vector2(3.41696, 2.97416)
 sprite_frames = SubResource("SpriteFrames_4nss6")
 animation = &"Idle"
 speed_scale = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 158)
+position = Vector2(3, 63)
 shape = SubResource("CapsuleShape2D_n4sts")
 
 [node name="Collision" type="Area2D" parent="."]
 position = Vector2(-9, 171)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
-position = Vector2(-1, 6)
+position = Vector2(10, -95)
 shape = SubResource("RectangleShape2D_tvbjh")
 
 [node name="ParticleTrails" type="CPUParticles2D" parent="."]
