@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bjb3dx2x4bocm"]
+[gd_scene load_steps=22 format=4 uid="uid://bjb3dx2x4bocm"]
 
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_lpo2y"]
 [ext_resource type="Script" uid="uid://b1ka2jhset2m4" path="res://Scripts/GameManager.gd" id="4_ndpt4"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://1nxfi08u15e3" path="res://sample-3.png" id="6_20c78"]
 [ext_resource type="Script" uid="uid://l8ubxyal6no7" path="res://Scripts/GameUI.gd" id="6_um0jo"]
 [ext_resource type="Texture2D" uid="uid://bn3rc5auc0bhy" path="res://1.png" id="7_enwln"]
+[ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_ns8o6"]
+[ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_doswy"]
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="9_es7ky"]
 [ext_resource type="PackedScene" uid="uid://cefondxpiec1l" path="res://End.tscn" id="10_82bm0"]
 
@@ -564,7 +566,7 @@ layer_0/tile_data = PackedInt32Array(458763, 0, 5, 327690, 262144, 5, 262149, 32
 
 [node name="SpawnPoint" type="Marker2D" parent="Level"]
 unique_name_in_owner = true
-position = Vector2(115, 145)
+position = Vector2(115, 170)
 
 [node name="TutorialText" type="Node2D" parent="."]
 position = Vector2(31, 118)
@@ -576,10 +578,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = 12.0
-offset_right = -20.0
-offset_bottom = 12.0
+offset_left = -2.0
+offset_top = 6.0
+offset_right = -2.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_um0jo")
@@ -590,6 +592,28 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 116.0
+offset_bottom = 116.0
+texture = ExtResource("7_ns8o6")
+stretch_mode = 4
+
+[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+offset_left = 104.0
+offset_top = 42.0
+offset_right = 148.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.910156, 0.730469, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_doswy")
+theme_override_font_sizes/font_size = 32
+text = "x 3"
 
 [node name="LevelFinishDoor" parent="." instance=ExtResource("9_es7ky")]
 z_index = 1
