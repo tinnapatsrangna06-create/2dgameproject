@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cefondxpiec1l"]
+
+[ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="1_lm0ep"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lry8e"]
+font_size = 120
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 165.0
+offset_top = 89.0
+offset_right = 1075.0
+offset_bottom = 394.0
+
+[node name="Credits" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 199.0
+offset_right = 546.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.910156, 0.730469, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_lm0ep")
+theme_override_font_sizes/font_size = 32
+text = "END"
+label_settings = SubResource("LabelSettings_lry8e")
+horizontal_alignment = 1

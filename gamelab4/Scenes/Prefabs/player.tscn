@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://w7m6tehvvy3g"]
+
+[ext_resource type="Script" uid="uid://c014t2laserj2" path="res://Scripts/player.gd" id="1_qt7d6"]
+[ext_resource type="Texture2D" uid="uid://dxp77wq60c2rr" path="res://Assets/Textures/CloudTexture.png" id="3_8vxmb"]
+[ext_resource type="Texture2D" uid="uid://u6mvmmeapb15" path="res://Assets/Textures/หมอผี1.png" id="3_ak25i"]
+[ext_resource type="Texture2D" uid="uid://davyjgy1r0lkf" path="res://Assets/Textures/หมอผี2.png" id="4_fdt7q"]
+[ext_resource type="PackedScene" uid="uid://dgrwhs88wssvs" path="res://node_2d.tscn" id="5_cb7df"]
+[ext_resource type="Texture2D" uid="uid://b4kjha56ssv2k" path="res://Assets/Textures/หมอผี3.png" id="5_k7ict"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4nss6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ak25i")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ak25i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fdt7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k7ict")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4sts"]
+radius = 27.0
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvbjh"]
+size = Vector2(58, 82.5)
+
+[sub_resource type="Curve" id="Curve_m2jh0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_3gc37"]
+offsets = PackedFloat32Array(0.25, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(6, -182)
+script = ExtResource("1_qt7d6")
+move_speed = 300.0
+jump_force = 300.0
+max_jump_count = 10
+double_jump = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, 172)
+scale = Vector2(2.26784, 1.51523)
+sprite_frames = SubResource("SpriteFrames_4nss6")
+animation = &"Idle"
+speed_scale = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 158)
+shape = SubResource("CapsuleShape2D_n4sts")
+
+[node name="Collision" type="Area2D" parent="."]
+position = Vector2(-9, 171)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-1, 6)
+shape = SubResource("RectangleShape2D_tvbjh")
+
+[node name="ParticleTrails" type="CPUParticles2D" parent="."]
+position = Vector2(-24, 172)
+emitting = false
+amount = 20
+texture = ExtResource("3_8vxmb")
+lifetime = 0.4
+speed_scale = 0.8
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_min = 0.2
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_m2jh0")
+color_ramp = SubResource("Gradient_3gc37")
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-17, 175)
+emitting = false
+amount = 20
+lifetime = 0.6
+one_shot = true
+speed_scale = 1.2
+explosiveness = 1.0
+lifetime_randomness = 0.4
+emission_shape = 2
+emission_sphere_radius = 50.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_min = 15.0
+scale_amount_max = 30.0
+scale_amount_curve = SubResource("Curve_m2jh0")
+color_ramp = SubResource("Gradient_3gc37")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-13, 179)
+
+[node name="can" parent="." instance=ExtResource("5_cb7df")]
+visible = false
+scale = Vector2(0.09, 0.09)
+
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]

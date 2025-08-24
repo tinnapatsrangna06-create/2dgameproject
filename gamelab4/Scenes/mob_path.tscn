@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dae2qyq4fj4n6"]
+
+[sub_resource type="Curve2D" id="Curve2D_0xm2m"]
+_data = {
+"points": PackedVector2Array(-1.61051, 0, 1.61051, 0, 0, 40, 0, 0, 0, 0, 800, 0, 0, 0, 0, 0, 800, 600, 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="MobPath" type="Path2D"]
+curve = SubResource("Curve2D_0xm2m")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="."]
+position = Vector2(0, 40)

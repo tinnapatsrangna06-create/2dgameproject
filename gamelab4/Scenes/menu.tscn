@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://bu6gqkbutgldq"]
+
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_cayip"]
+[ext_resource type="Script" path="res://Scenes/start.gd" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://u6mvmmeapb15" path="res://Assets/Textures/หมอผี1.png" id="2_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://dqdhljdh0t6uv" path="res://Summer1.png" id="4_158mb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhh6f"]
+font_size = 33
+font_color = Color(0.958721, 0.90765, 7.70092e-07, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_cayip"]
+
+[sub_resource type="Theme" id="Theme_158mb"]
+default_font = SubResource("SystemFont_cayip")
+default_font_size = 80
+
+[sub_resource type="Theme" id="Theme_wwsa2"]
+
+[sub_resource type="SystemFont" id="SystemFont_jsrd8"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_cayip")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="หมอผี1" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(347, 649)
+scale = Vector2(4.26667, 4.2125)
+texture = ExtResource("2_wwsa2")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+clip_contents = true
+offset_left = 742.0
+offset_top = 139.0
+offset_right = 1132.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "BOKY THE GHOST STORY"
+label_settings = SubResource("LabelSettings_xhh6f")
+
+[node name="start" type="Button" parent="CanvasLayer"]
+clip_contents = true
+offset_left = 810.0
+offset_top = 238.0
+offset_right = 1071.0
+offset_bottom = 377.0
+theme = SubResource("Theme_158mb")
+text = "Start"
+script = ExtResource("2_158mb")
+
+[node name="exit" type="Button" parent="CanvasLayer"]
+clip_contents = true
+offset_left = 806.0
+offset_top = 427.0
+offset_right = 1065.0
+offset_bottom = 554.0
+theme = SubResource("Theme_wwsa2")
+theme_override_fonts/font = SubResource("SystemFont_jsrd8")
+theme_override_font_sizes/font_size = 80
+text = "Exit"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wallpaper2" type="Sprite2D" parent="CanvasLayer"]
+z_index = -100
+position = Vector2(1023, 187)
+scale = Vector2(1.80383, 1.32827)
+texture = ExtResource("4_158mb")
+
+[connection signal="pressed" from="CanvasLayer/start" to="." method="_on_start_button_pressed"]

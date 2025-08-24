@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4fcl07fjhjy7"]
+
+[ext_resource type="Script" uid="uid://bk0yjhv6an4qa" path="res://menu.gd" id="1_lti8b"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_lti8b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.451
+anchor_top = 0.383
+anchor_right = 0.552
+anchor_bottom = 0.434
+offset_left = -0.552063
+offset_top = -0.184006
+offset_right = 0.0959473
+offset_bottom = -0.231995
+text = "Little Slimy"
+
+[node name="Start" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.464
+anchor_top = 0.498
+anchor_right = 0.531
+anchor_bottom = 0.571
+offset_left = 0.471985
+offset_top = 0.29599
+offset_right = 0.287964
+offset_bottom = -0.00802612
+text = "Start"
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.464
+anchor_top = 0.619
+anchor_right = 0.526
+anchor_bottom = 0.694
+offset_left = 0.471985
+offset_top = -0.112
+offset_right = 0.0479736
+offset_bottom = 0.287994
+text = "exit"
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
