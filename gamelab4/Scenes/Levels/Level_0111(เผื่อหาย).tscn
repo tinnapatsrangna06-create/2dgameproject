@@ -487,4 +487,13 @@ position = Vector2(4990, 431)
 door = NodePath("../../Doors/Door")
 
 [node name="CharacterBody2D" parent="." groups=["Monsters"] instance=ExtResource("20_cyicu")]
-position = Vector2(1807, 417)
+position = Vector2(1765, 368)
+
+[node name="CharacterBody2D2" parent="." groups=["Monsters"] instance=ExtResource("20_cyicu")]
+position = Vector2(6844, 371)
+
+[node name="CharacterBody2D3" parent="." groups=["Monsters"] instance=ExtResource("20_cyicu")]
+position = Vector2(5573, 371)
+
+[node name="CharacterBody2D4" parent="." groups=["Monsters"] instance=ExtResource("20_cyicu")]
+position = Vector2(3160, 369)
