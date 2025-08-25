@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://ddi8rathf4soj"]
+
+[ext_resource type="Script" uid="uid://djlt57cioqwd2" path="res://character_body_2d.gd" id="1_f50pn"]
+[ext_resource type="Texture2D" uid="uid://clh1m22hqqw5q" path="res://Scenes/Prefabs/png/Walk (1).png" id="2_qnedo"]
+[ext_resource type="Texture2D" uid="uid://da85ix8cfghns" path="res://Scenes/Prefabs/png/Walk (2).png" id="3_wyqjk"]
+[ext_resource type="Texture2D" uid="uid://ow844de2p3vy" path="res://Scenes/Prefabs/png/Walk (3).png" id="4_k85er"]
+[ext_resource type="Texture2D" uid="uid://g0dbvgtvy45w" path="res://Scenes/Prefabs/png/Walk (4).png" id="5_ebjds"]
+[ext_resource type="Texture2D" uid="uid://bhhlm1637em5t" path="res://Scenes/Prefabs/png/Walk (5).png" id="6_y1dt5"]
+[ext_resource type="Texture2D" uid="uid://bpgk5uv6du3te" path="res://Scenes/Prefabs/png/Walk (6).png" id="7_au0nh"]
+[ext_resource type="Texture2D" uid="uid://covjrqps1wokm" path="res://Scenes/Prefabs/png/Walk (7).png" id="8_76bt2"]
+[ext_resource type="Texture2D" uid="uid://dl4nhjslef4f1" path="res://Scenes/Prefabs/png/Walk (8).png" id="9_sxias"]
+[ext_resource type="Texture2D" uid="uid://dm56kl4hk5dug" path="res://Scenes/Prefabs/png/Walk (9).png" id="10_ucfvk"]
+[ext_resource type="Texture2D" uid="uid://da53uim8mo2fw" path="res://Scenes/Prefabs/png/Walk (10).png" id="11_2dyae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u5n8"]
+size = Vector2(69, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73nau"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qnedo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wyqjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k85er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ebjds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y1dt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_au0nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_76bt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sxias")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ucfvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2dyae")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_f50pn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Monsters"]]
+position = Vector2(-22.5, 0.5)
+shape = SubResource("RectangleShape2D_2u5n8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, 1)
+scale = Vector2(0.15678, 0.15678)
+sprite_frames = SubResource("SpriteFrames_73nau")
+animation = &"walk"

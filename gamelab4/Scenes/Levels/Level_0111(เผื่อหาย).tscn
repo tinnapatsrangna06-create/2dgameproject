@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://baha64ytagf7d"]
+[gd_scene load_steps=45 format=4 uid="uid://baha64ytagf7d"]
 
 [ext_resource type="Texture2D" uid="uid://oh0g4usa21b8" path="res://2304x1296.png" id="1_rp0ww"]
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="2_hyiqx"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b8s742ony6uas" path="res://Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png" id="17_jj5hj"]
 [ext_resource type="Texture2D" uid="uid://kijppochojkd" path="res://Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 01.png" id="18_s26lv"]
 [ext_resource type="Texture2D" uid="uid://b23xlm70norxf" path="res://Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 03.png" id="19_nq3lo"]
+[ext_resource type="PackedScene" uid="uid://ddi8rathf4soj" path="res://character_body_2d.tscn" id="20_cyicu"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="20_qw2h5"]
 [ext_resource type="Script" uid="uid://b1ka2jhset2m4" path="res://Scripts/GameManager.gd" id="21_ukytp"]
 [ext_resource type="Script" uid="uid://l8ubxyal6no7" path="res://Scripts/GameUI.gd" id="22_u0ywy"]
@@ -484,3 +485,6 @@ visible = false
 [node name="WeightedPuzzle" parent="Interactables" node_paths=PackedStringArray("door") instance=ExtResource("25_u60gp")]
 position = Vector2(4990, 431)
 door = NodePath("../../Doors/Door")
+
+[node name="CharacterBody2D" parent="." groups=["Monsters"] instance=ExtResource("20_cyicu")]
+position = Vector2(1807, 417)
