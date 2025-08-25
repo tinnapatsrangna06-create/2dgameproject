@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bjb3dx2x4bocm"]
+[gd_scene load_steps=26 format=4 uid="uid://bjb3dx2x4bocm"]
 
 [ext_resource type="Texture2D" uid="uid://disa4rdxr6s43" path="res://ChatGPT Image 24 ส.ค. 2568 17_05_58.png" id="2_72l3o"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_lpo2y"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cefondxpiec1l" path="res://End.tscn" id="10_82bm0"]
 [ext_resource type="PackedScene" uid="uid://wmqh88ak5l20" path="res://character_body_2d.tscn" id="14_lvv4x"]
 [ext_resource type="PackedScene" uid="uid://btox3m7e1681d" path="res://skele.tscn" id="15_jlrok"]
+[ext_resource type="Texture2D" uid="uid://d2ohg4c3hsrqd" path="res://torch_frame_0_0.png" id="16_6mkr2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enwln"]
 texture = ExtResource("5_8107p")
@@ -670,4 +671,28 @@ texture = ExtResource("2_72l3o")
 position = Vector2(1063, 417)
 
 [node name="SKELE" parent="." instance=ExtResource("15_jlrok")]
-position = Vector2(1773, 418)
+position = Vector2(3895, 88)
+
+[node name="Wallpaper3" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(760, 150)
+scale = Vector2(2.60289, 2.22124)
+texture = ExtResource("16_6mkr2")
+
+[node name="Wallpaper4" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(4567, -328)
+scale = Vector2(3.34344, 4.09411)
+texture = ExtResource("16_6mkr2")
+
+[node name="Wallpaper5" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(2722, -218)
+scale = Vector2(2.95001, 3.01562)
+texture = ExtResource("16_6mkr2")
+
+[node name="Wallpaper6" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(6312, -325)
+scale = Vector2(4.78879, 5.03137)
+texture = ExtResource("16_6mkr2")
