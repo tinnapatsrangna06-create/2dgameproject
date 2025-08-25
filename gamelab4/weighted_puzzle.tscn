@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbsj47u24eh74"]
 
-[ext_resource type="Script" uid="uid://dbjdlrphsjya0" path="res://weighted_puzzle.gd" id="1_1qi1t"]
+[ext_resource type="Script" path="res://weighted_puzzle.gd" id="1_1qi1t"]
 [ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="2_haafk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6dsf"]
