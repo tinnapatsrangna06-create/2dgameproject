@@ -1,0 +1,187 @@
+[gd_scene load_steps=20 format=3 uid="uid://w7m6tehvvy3g"]
+
+[ext_resource type="Script" uid="uid://cl4miiq3unrue" path="res://Scripts/player.gd" id="1_qt7d6"]
+[ext_resource type="Texture2D" uid="uid://dxp77wq60c2rr" path="res://Assets/Textures/CloudTexture.png" id="3_8vxmb"]
+[ext_resource type="Texture2D" uid="uid://1f2nqo6n18x2" path="res://character_texture/เดิน/หมอผีนิ่ง.png" id="3_ak25i"]
+[ext_resource type="Texture2D" uid="uid://c0y4latxyj3gq" path="res://character_texture/เดิน/หมอผี1.png" id="3_v34u6"]
+[ext_resource type="Texture2D" uid="uid://du1qawg54bwck" path="res://character_texture/เดิน/หมอผี2.png" id="4_ak25i"]
+[ext_resource type="Texture2D" uid="uid://dfwbl1n8dcoa0" path="res://character_texture/หมอผีเดินหายตัว/หาย1.png" id="4_eejau"]
+[ext_resource type="Texture2D" uid="uid://d2ahx66dfnexd" path="res://character_texture/เดิน/หมอผี3.png" id="5_fdt7q"]
+[ext_resource type="Texture2D" uid="uid://dol7lymtmwdhl" path="res://character_texture/หมอผีเดินหายตัว/หายนื่ง.png" id="5_rc3i2"]
+[ext_resource type="Texture2D" uid="uid://1jmhholv7isk" path="res://character_texture/หมอผีเดินหายตัว/หาย2.png" id="6_ultsi"]
+[ext_resource type="Texture2D" uid="uid://b2yiftdo2v1to" path="res://character_texture/หมอผีเดินหายตัว/หาย3.png" id="7_823f0"]
+[ext_resource type="Texture2D" uid="uid://oypps42001i3" path="res://character_texture/ก่อนหาย/แขนขึ้น.png" id="9_33gpj"]
+[ext_resource type="Texture2D" uid="uid://cr37ma4h2em0c" path="res://character_texture/ก่อนหาย/ไหว้1.png" id="10_5us4r"]
+[ext_resource type="Texture2D" uid="uid://d03irp4v4q4xi" path="res://character_texture/ก่อนหาย/ไหว้2.png" id="11_dfo05"]
+[ext_resource type="Texture2D" uid="uid://c6id3q8l3blf0" path="res://character_texture/ก่อนหาย/แขนลง.png" id="12_imxsi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4nss6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v34u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ak25i")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_eejau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rc3i2")
+}],
+"loop": true,
+"name": &"Idle_Invis",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_eejau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ultsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eejau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_823f0")
+}],
+"loop": true,
+"name": &"Invisible",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v34u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ak25i")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v34u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_33gpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5us4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dfo05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_imxsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eejau")
+}],
+"loop": false,
+"name": &"Pre_Invisible",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v34u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ak25i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v34u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fdt7q")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4sts"]
+radius = 16.8225
+height = 56.143
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvbjh"]
+size = Vector2(76.0331, 132.727)
+
+[sub_resource type="Curve" id="Curve_m2jh0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_3gc37"]
+offsets = PackedFloat32Array(0.25, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_qt7d6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 26)
+scale = Vector2(0.296751, 0.296751)
+sprite_frames = SubResource("SpriteFrames_4nss6")
+animation = &"Pre_Invisible"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 23)
+scale = Vector2(2.31832, 2.35114)
+shape = SubResource("CapsuleShape2D_n4sts")
+
+[node name="Collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-0.500003, 22)
+scale = Vector2(1.11793, 1.11507)
+shape = SubResource("RectangleShape2D_tvbjh")
+
+[node name="ParticleTrails" type="CPUParticles2D" parent="."]
+position = Vector2(0, 42)
+emitting = false
+amount = 20
+texture = ExtResource("3_8vxmb")
+lifetime = 0.4
+speed_scale = 0.8
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_min = 0.2
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_m2jh0")
+color_ramp = SubResource("Gradient_3gc37")
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-1, 15)
+emitting = false
+amount = 20
+lifetime = 0.6
+one_shot = true
+speed_scale = 1.2
+explosiveness = 1.0
+lifetime_randomness = 0.4
+emission_shape = 2
+emission_sphere_radius = 50.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_min = 15.0
+scale_amount_max = 30.0
+scale_amount_curve = SubResource("Curve_m2jh0")
+color_ramp = SubResource("Gradient_3gc37")
+
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]

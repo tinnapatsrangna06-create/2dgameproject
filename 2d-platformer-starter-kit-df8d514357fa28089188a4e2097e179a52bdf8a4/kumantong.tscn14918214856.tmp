@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvb1bv4lhpap3"]
+
+[ext_resource type="Script" uid="uid://dppes0ywa4w54" path="res://kumantong.gd" id="1_8xxfj"]
+[ext_resource type="Texture2D" uid="uid://mlkemsuc8dmm" path="res://Assets/kumantong/กุมารทอง.png" id="2_1t0gd"]
+[ext_resource type="Texture2D" uid="uid://dt4wk3vay3tdy" path="res://Assets/kumantong/กุมารทอง3.png" id="3_ma3v3"]
+[ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="4_basqm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qkyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1t0gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ma3v3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f477s"]
+size = Vector2(178, 262)
+
+[node name="Kumantong" type="Node2D"]
+script = ExtResource("1_8xxfj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0qkyw")
+animation = &"idle"
+frame_progress = 0.901645
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 6)
+shape = SubResource("RectangleShape2D_f477s")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -208.0
+offset_top = -212.0
+offset_right = 245.0
+offset_bottom = -140.0
+theme_override_colors/font_color = Color(0.972549, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_basqm")
+theme_override_font_sizes/font_size = 60
+text = "Pass \"E\" For ???"

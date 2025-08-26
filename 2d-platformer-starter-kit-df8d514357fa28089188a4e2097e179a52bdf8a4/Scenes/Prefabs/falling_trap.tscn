@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://6hkopjg71e7y"]
+
+[ext_resource type="Script" uid="uid://bvvg3gyp0ccgu" path="res://Scripts/falling_trap.gd" id="1_eldf5"]
+[ext_resource type="Texture2D" uid="uid://oa1v06ae1u6k" path="res://Assets/Textures/OUsN1U.png" id="2_2i8cl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f51qa"]
+size = Vector2(20, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gol6w"]
+size = Vector2(23.0225, 112.84)
+
+[node name="FallingTrap" type="Node2D"]
+script = ExtResource("1_eldf5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.1421
+scale = Vector2(0.0633297, 0.0633297)
+texture = ExtResource("2_2i8cl")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_f51qa")
+
+[node name="DetectArea" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+position = Vector2(0, 39.5)
+scale = Vector2(0.868716, 0.841898)
+shape = SubResource("RectangleShape2D_gol6w")
