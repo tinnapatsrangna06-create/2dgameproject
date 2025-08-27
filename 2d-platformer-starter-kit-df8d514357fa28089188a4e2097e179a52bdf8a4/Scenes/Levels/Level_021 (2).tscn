@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://c2yp07vlnm6is"]
+[gd_scene load_steps=49 format=4 uid="uid://c2yp07vlnm6is"]
 
 [ext_resource type="Texture2D" uid="uid://oh0g4usa21b8" path="res://2304x1296.png" id="1_ud3qm"]
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="2_6pk8h"]
@@ -22,12 +22,14 @@
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="20_ktqka"]
 [ext_resource type="Script" uid="uid://cmrvbffoxigvq" path="res://Scripts/GameManager.gd" id="21_hdxov"]
 [ext_resource type="Script" uid="uid://cw4fg8bave4gy" path="res://Scripts/GameUI.gd" id="22_nhuxw"]
-[ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="23_6nfxe"]
 [ext_resource type="PackedScene" uid="uid://6hkopjg71e7y" path="res://Scenes/Prefabs/falling_trap.tscn" id="24_6pk8h"]
 [ext_resource type="PackedScene" uid="uid://btox3m7e1681d" path="res://skele.tscn" id="25_my00p"]
 [ext_resource type="PackedScene" uid="uid://bb5d4vqvs7b13" path="res://Scenes/Prefabs/pickup_pread.tscn" id="26_gbmpr"]
 [ext_resource type="PackedScene" uid="uid://6rcko2lng2n" path="res://Scenes/Prefabs/pickup_krahung.tscn" id="27_pco16"]
+[ext_resource type="Texture2D" uid="uid://bm64tmi36o6qy" path="res://Assets/Textures/กรอบ.png" id="28_nn1hl"]
 [ext_resource type="PackedScene" uid="uid://dtsh4yev5vr2t" path="res://Scenes/Prefabs/pickup_kuman.tscn" id="28_xmalc"]
+[ext_resource type="FontFile" uid="uid://b2ofto2wf7rcl" path="res://Assets/Fonts/Melted Monster.ttf" id="29_ddmrk"]
+[ext_resource type="Texture2D" uid="uid://ddb8kspmr8x1f" path="res://Assets/Textures/3656384-200.png" id="30_icnmu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rndpx"]
 texture = ExtResource("5_qw432")
@@ -428,51 +430,6 @@ theme_override_font_sizes/font_size = 32
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("21_hdxov")
 
-[node name="UserInterface" type="CanvasLayer" parent="."]
-
-[node name="GameUI" type="Control" parent="UserInterface"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 3.0
-offset_right = 9.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("22_nhuxw")
-
-[node name="Score" type="Control" parent="UserInterface/GameUI"]
-unique_name_in_owner = true
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 116.0
-offset_bottom = 116.0
-texture = ExtResource("23_6nfxe")
-stretch_mode = 4
-
-[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 104.0
-offset_top = 42.0
-offset_right = 148.0
-offset_bottom = 84.0
-theme_override_colors/font_color = Color(0.910156, 0.730469, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("20_ktqka")
-theme_override_font_sizes/font_size = 32
-text = "x 3"
-
 [node name="FallingTrap2" parent="." instance=ExtResource("24_6pk8h")]
 position = Vector2(1419, 179)
 rotation = -6.28319
@@ -528,3 +485,63 @@ scale = Vector2(0.197707, 0.197707)
 [node name="PickupKuman" parent="." instance=ExtResource("28_xmalc")]
 position = Vector2(244, 415)
 scale = Vector2(0.217078, 0.217078)
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("22_nhuxw")
+
+[node name="UI สถานะ" type="Control" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -92.0
+offset_right = 15.0
+offset_bottom = -52.0
+
+[node name="กรอบ" type="Sprite2D" parent="UserInterface/GameUI/UI สถานะ"]
+unique_name_in_owner = true
+position = Vector2(86.5, 151.5)
+scale = Vector2(0.238, 0.303333)
+texture = ExtResource("28_nn1hl")
+
+[node name="invis" type="Label" parent="UserInterface/GameUI/UI สถานะ"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 43.0
+offset_top = 153.438
+offset_right = 612.0
+offset_bottom = 341.438
+scale = Vector2(0.156165, 0.139515)
+theme_override_colors/font_color = Color(1, 0.235294, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("29_ddmrk")
+theme_override_font_sizes/font_size = 76
+text = "invisible"
+
+[node name="InvisLabel" type="Label" parent="UserInterface/GameUI/UI สถานะ"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 104.0
+offset_top = 128.0
+offset_right = 265.0
+offset_bottom = 378.0
+scale = Vector2(0.182384, 0.159998)
+theme_override_fonts/font = ExtResource("29_ddmrk")
+theme_override_font_sizes/font_size = 200
+text = "10"
+
+[node name="3656384-201" type="Sprite2D" parent="UserInterface/GameUI/UI สถานะ"]
+unique_name_in_owner = true
+position = Vector2(65, 142.438)
+scale = Vector2(0.09625, 0.09625)
+texture = ExtResource("30_icnmu")
