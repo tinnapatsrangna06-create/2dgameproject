@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bjb3dx2x4bocm"]
+[gd_scene load_steps=31 format=4 uid="uid://bjb3dx2x4bocm"]
 
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="1_dwt56"]
 [ext_resource type="Script" uid="uid://cmrvbffoxigvq" path="res://Scripts/GameManager.gd" id="2_hccyt"]
@@ -16,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://wmqh88ak5l20" path="res://character_body_2d.tscn" id="14_7fmcl"]
 [ext_resource type="PackedScene" uid="uid://btox3m7e1681d" path="res://skele.tscn" id="15_vf5qr"]
 [ext_resource type="Texture2D" uid="uid://d2ohg4c3hsrqd" path="res://torch_frame_0_0.png" id="16_vglva"]
+[ext_resource type="PackedScene" uid="uid://dtsh4yev5vr2t" path="res://Scenes/Prefabs/pickup_kuman.tscn" id="17_ttuvg"]
+[ext_resource type="PackedScene" uid="uid://6rcko2lng2n" path="res://Scenes/Prefabs/pickup_krahung.tscn" id="18_74tvc"]
+[ext_resource type="PackedScene" uid="uid://bb5d4vqvs7b13" path="res://Scenes/Prefabs/pickup_pread.tscn" id="19_got2n"]
+[ext_resource type="PackedScene" uid="uid://cisif8wrqf8bq" path="res://Scenes/Prefabs/pickup_buffalo.tscn" id="20_4jm73"]
+[ext_resource type="PackedScene" uid="uid://bogy5jdcsyrqs" path="res://Scenes/Prefabs/PushBox.tscn" id="21_xlhi3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enwln"]
 texture = ExtResource("3_o1wol")
@@ -570,7 +575,7 @@ tile_set = SubResource("TileSet_20c78")
 position = Vector2(-14, 34)
 tile_set = SubResource("TileSet_2fcbi")
 format = 2
-layer_0/tile_data = PackedInt32Array(327690, 262144, 5, 524312, 0, 5, 524313, 0, 5, 327703, 262144, 5, 524321, 0, 5, 524322, 0, 5, 589924, 0, 5, 589925, 0, 5, 327685, 327680, 6, 262149, 327680, 5, 458763, 0, 5)
+layer_0/tile_data = PackedInt32Array(524312, 0, 5, 524313, 0, 5, 524321, 0, 5, 524322, 0, 5, 589924, 0, 5, 589925, 0, 5, 327685, 327680, 6, 262149, 327680, 5, 458763, 0, 5)
 
 [node name="SpawnPoint" type="Marker2D" parent="Level"]
 unique_name_in_owner = true
@@ -696,3 +701,25 @@ z_index = -100
 position = Vector2(6312, -325)
 scale = Vector2(4.78879, 5.03137)
 texture = ExtResource("16_vglva")
+
+[node name="PickupKuman" parent="." instance=ExtResource("17_ttuvg")]
+position = Vector2(63, 382)
+scale = Vector2(0.217078, 0.217078)
+
+[node name="กระหัง" parent="." instance=ExtResource("18_74tvc")]
+position = Vector2(303, 383)
+scale = Vector2(0.197707, 0.197707)
+
+[node name="เปรด" parent="." instance=ExtResource("19_got2n")]
+position = Vector2(522, 384)
+scale = Vector2(0.240892, 0.240892)
+
+[node name="ควาย" parent="." instance=ExtResource("20_4jm73")]
+position = Vector2(189, 382)
+scale = Vector2(0.168026, 0.168026)
+
+[node name="กล่อง" parent="." instance=ExtResource("21_xlhi3")]
+position = Vector2(660, 394)
+
+[node name="กล่อง2" parent="." instance=ExtResource("21_xlhi3")]
+position = Vector2(1491, 386)

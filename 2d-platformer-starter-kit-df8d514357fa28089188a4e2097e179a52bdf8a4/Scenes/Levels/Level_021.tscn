@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://oh0g4usa21b8" path="res://2304x1296.png" id="1_ud3qm"]
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="2_6pk8h"]
-[ext_resource type="PackedScene" uid="uid://bjb3dx2x4bocm" path="res://Scenes/Levels/Level_02.tscn" id="3_my00p"]
+[ext_resource type="PackedScene" uid="uid://bjb3dx2x4bocm" path="res://Scenes/Levels/Level_023.tscn" id="3_my00p"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="4_1hxck"]
 [ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="5_qw432"]
 [ext_resource type="Texture2D" uid="uid://2p45nheofq2t" path="res://Spikes.png" id="6_gbmpr"]
