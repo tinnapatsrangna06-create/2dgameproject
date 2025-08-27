@@ -2959,7 +2959,7 @@ position = Vector2(2591, -658)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap2" parent="FallingTrap4" instance=ExtResource("20_5m24n")]
-position = Vector2(1486.11, 39.8192)
+position = Vector2(1491.23, 38.1126)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="PickupKuman" parent="." instance=ExtResource("21_iac0e")]
@@ -2982,7 +2982,7 @@ scale = Vector2(0.168026, 0.168026)
 position = Vector2(5727, 476)
 
 [node name="กล่อง2" parent="." instance=ExtResource("25_r23l5")]
-position = Vector2(1240, 317)
+position = Vector2(1288, 339)
 
 [node name="กล่อง3" parent="." instance=ExtResource("25_r23l5")]
 position = Vector2(2337, -283)
@@ -2994,7 +2994,7 @@ position = Vector2(3005, -670)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap2" parent="Node2D/FallingTrap10" instance=ExtResource("20_5m24n")]
-position = Vector2(1486.11, 39.8192)
+position = Vector2(1491.23, 38.1126)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap7" parent="Node2D" instance=ExtResource("20_5m24n")]
@@ -3002,7 +3002,7 @@ position = Vector2(2797, -682)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap2" parent="Node2D/FallingTrap7" instance=ExtResource("20_5m24n")]
-position = Vector2(1486.11, 39.8192)
+position = Vector2(1491.23, 38.1126)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap5" parent="Node2D" instance=ExtResource("20_5m24n")]
@@ -3033,7 +3033,7 @@ position = Vector2(3211, -694)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap2" parent="Node2D2/FallingTrap13" instance=ExtResource("20_5m24n")]
-position = Vector2(1486.11, 39.8192)
+position = Vector2(1491.23, 38.1126)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap10" parent="Node2D2" instance=ExtResource("20_5m24n")]
@@ -3041,7 +3041,7 @@ position = Vector2(3005, -670)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap2" parent="Node2D2/FallingTrap10" instance=ExtResource("20_5m24n")]
-position = Vector2(1486.11, 39.8192)
+position = Vector2(1491.23, 38.1126)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap7" parent="Node2D2" instance=ExtResource("20_5m24n")]
@@ -3049,7 +3049,7 @@ position = Vector2(2797, -682)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap2" parent="Node2D2/FallingTrap7" instance=ExtResource("20_5m24n")]
-position = Vector2(1486.11, 39.8192)
+position = Vector2(1491.23, 38.1126)
 scale = Vector2(3.5159, 3.5159)
 
 [node name="FallingTrap5" parent="Node2D2" instance=ExtResource("20_5m24n")]
