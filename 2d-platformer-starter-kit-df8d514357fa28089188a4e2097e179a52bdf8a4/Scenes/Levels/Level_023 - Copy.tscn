@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c87dnjmpc7ajv"]
+[gd_scene load_steps=26 format=4 uid="uid://y3mta0yaxs5r"]
 
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="1_dwt56"]
 [ext_resource type="Script" uid="uid://cmrvbffoxigvq" path="res://Scripts/GameManager.gd" id="2_hccyt"]

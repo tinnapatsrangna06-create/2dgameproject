@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="1_oqkjg"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/Level_021.tscn" id="2_jt6p5"]
+[ext_resource type="PackedScene" uid="uid://cjanwm3sy2x37" path="res://Scenes/Levels/Level_021.tscn" id="2_jt6p5"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
 [ext_resource type="Texture2D" uid="uid://bktd50id3laci" path="res://Assets/bg/c684c371-bc7c-4313-9ae1-5bc3165dd7d5.png" id="4_1bssr"]
 [ext_resource type="Script" uid="uid://cmrvbffoxigvq" path="res://Scripts/GameManager.gd" id="4_vgfkr"]

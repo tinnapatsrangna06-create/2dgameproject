@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=33 format=4 uid="uid://bjb3dx2x4bocm"]
 =======
 [gd_scene load_steps=32 format=4 uid="uid://bjb3dx2x4bocm"]
@@ -7,6 +8,9 @@
 =======
 [gd_scene load_steps=31 format=4 uid="uid://bjb3dx2x4bocm"]
 >>>>>>> parent of aa24150 (l)
+=======
+[gd_scene load_steps=33 format=4 uid="uid://bjb3dx2x4bocm"]
+>>>>>>> parent of 8fd01f4 (1)
 
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="1_dwt56"]
 [ext_resource type="Script" uid="uid://cmrvbffoxigvq" path="res://Scripts/GameManager.gd" id="2_hccyt"]
@@ -16,8 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://1nxfi08u15e3" path="res://sample-3.png" id="6_ttuvg"]
 [ext_resource type="Texture2D" uid="uid://bn3rc5auc0bhy" path="res://1.png" id="7_74tvc"]
 [ext_resource type="Script" uid="uid://cw4fg8bave4gy" path="res://Scripts/GameUI.gd" id="8_got2n"]
-[ext_resource type="PackedScene" uid="uid://c7dsg2xdclqhh" path="res://Scenes/Levels/Level_031.tscn" id="9_74tvc"]
+[ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="9_4jm73"]
+[ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="10_xlhi3"]
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="11_xdjef"]
+[ext_resource type="PackedScene" uid="uid://cefondxpiec1l" path="res://End.tscn" id="12_oxol1"]
 [ext_resource type="Texture2D" uid="uid://disa4rdxr6s43" path="res://ChatGPT Image 24 ส.ค. 2568 17_05_58.png" id="13_r7w5x"]
 [ext_resource type="PackedScene" uid="uid://wmqh88ak5l20" path="res://character_body_2d.tscn" id="14_7fmcl"]
 [ext_resource type="PackedScene" uid="uid://btox3m7e1681d" path="res://skele.tscn" id="15_vf5qr"]
@@ -26,10 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://6rcko2lng2n" path="res://Scenes/Prefabs/pickup_krahung.tscn" id="18_74tvc"]
 [ext_resource type="PackedScene" uid="uid://bb5d4vqvs7b13" path="res://Scenes/Prefabs/pickup_pread.tscn" id="19_got2n"]
 [ext_resource type="PackedScene" uid="uid://cisif8wrqf8bq" path="res://Scenes/Prefabs/pickup_buffalo.tscn" id="20_4jm73"]
-[ext_resource type="Texture2D" uid="uid://bm64tmi36o6qy" path="res://Assets/Textures/กรอบ.png" id="20_got2n"]
-[ext_resource type="FontFile" uid="uid://b2ofto2wf7rcl" path="res://Assets/Fonts/Melted Monster.ttf" id="21_4jm73"]
 [ext_resource type="PackedScene" uid="uid://bogy5jdcsyrqs" path="res://Scenes/Prefabs/PushBox.tscn" id="21_xlhi3"]
-[ext_resource type="Texture2D" uid="uid://ddb8kspmr8x1f" path="res://Assets/Textures/3656384-200.png" id="22_xlhi3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enwln"]
 texture = ExtResource("3_o1wol")
@@ -593,10 +596,57 @@ position = Vector2(165, -62)
 [node name="TutorialText" type="Node2D" parent="."]
 position = Vector2(31, 118)
 
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1041.0
+offset_top = -206.0
+offset_right = -1041.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_got2n")
+
+[node name="Score" type="Control" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 116.0
+offset_bottom = 116.0
+texture = ExtResource("9_4jm73")
+stretch_mode = 4
+
+[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 104.0
+offset_top = 42.0
+offset_right = 148.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.910156, 0.730469, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_xlhi3")
+theme_override_font_sizes/font_size = 32
+text = "x 3"
+
 [node name="LevelFinishDoor" parent="." instance=ExtResource("11_xdjef")]
 z_index = 1
 position = Vector2(7296, 360)
-next_scene = ExtResource("9_74tvc")
+next_scene = ExtResource("12_oxol1")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_82bm0")
@@ -687,9 +737,9 @@ position = Vector2(660, 394)
 position = Vector2(1491, 386)
 <<<<<<< HEAD
 
-<<<<<<< HEAD
 [node name="กล่อง3" parent="." instance=ExtResource("21_xlhi3")]
 position = Vector2(3218, 72)
+<<<<<<< HEAD
 =======
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
@@ -753,3 +803,5 @@ texture = ExtResource("22_xlhi3")
 >>>>>>> 8fa7ec9c9e6bc71dd71494fd0eb132b54fcf17ae
 =======
 >>>>>>> parent of aa24150 (l)
+=======
+>>>>>>> parent of 8fd01f4 (1)
