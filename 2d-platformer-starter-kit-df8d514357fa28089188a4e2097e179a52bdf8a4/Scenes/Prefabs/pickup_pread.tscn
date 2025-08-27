@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb5d4vqvs7b13"]
+
+[ext_resource type="Script" uid="uid://4inqij4krhbe" path="res://Scripts/pickup_pread.gd" id="1_hwvk2"]
+[ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="2_j5e7i"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6nhgv"]
+load_path = "res://.godot/imported/เปรด.png-24655835cd4bd361961360a3717015cf.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktxar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6nhgv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5c50"]
+size = Vector2(361, 1045)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_hwvk2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -375)
+scale = Vector2(0.712299, 0.712299)
+sprite_frames = SubResource("SpriteFrames_ktxar")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -383.5)
+shape = SubResource("RectangleShape2D_s5c50")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -199.0
+offset_top = -233.0
+offset_right = 251.0
+offset_bottom = -161.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_j5e7i")
+theme_override_font_sizes/font_size = 60
+text = "Press \"E\" to ???"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
