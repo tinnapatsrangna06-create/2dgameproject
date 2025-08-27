@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://c7oyd65d4a8te"]
+[gd_scene load_steps=42 format=4 uid="uid://bcd0n8onrc4qa"]
 
 [ext_resource type="Texture2D" uid="uid://oh0g4usa21b8" path="res://2304x1296.png" id="1_rp0ww"]
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="2_hyiqx"]
