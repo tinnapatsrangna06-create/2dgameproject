@@ -599,8 +599,8 @@ func respawn_tween():
 	tween.tween_property(self, "scale", Vector2.ONE, 0.15)
 
 # ================== SIGNALS ==================
-func _on_collision_body_entered(_body):
-	if _body.is_in_group("Traps"):
+func _on_collision_body_entered(body):
+	if body.is_in_group("Traps") or body.is_in_group("Monsters"):
 		AudioManager.death_sfx.play()
 		death_particles.emitting = true
 		death_tween()
