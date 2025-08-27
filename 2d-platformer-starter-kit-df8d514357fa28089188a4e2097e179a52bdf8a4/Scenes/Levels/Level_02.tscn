@@ -149,20 +149,20 @@ theme_override_font_sizes/font_size = 32
 text = "x 3"
 
 [node name="PickupKuman" parent="." instance=ExtResource("8_ombkc")]
-position = Vector2(352, 411)
+position = Vector2(330, 400)
 scale = Vector2(0.217078, 0.217078)
 
 [node name="กระหัง" parent="." instance=ExtResource("9_es7ky")]
-position = Vector2(592, 412)
+position = Vector2(570, 401)
 scale = Vector2(0.197707, 0.197707)
 
 [node name="เปรด" parent="." instance=ExtResource("10_82bm0")]
-position = Vector2(811, 413)
+position = Vector2(789, 402)
 scale = Vector2(0.240892, 0.240892)
 
 [node name="ควาย" parent="." instance=ExtResource("12_enwln")]
-position = Vector2(478, 411)
+position = Vector2(456, 400)
 scale = Vector2(0.168026, 0.168026)
 
 [node name="กล่อง" parent="." instance=ExtResource("5_20c78")]
-position = Vector2(1088, 416)
+position = Vector2(1066, 405)

@@ -236,7 +236,7 @@ height = 56.143
 size = Vector2(27.8524, 23.3908)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wku6q"]
-size = Vector2(171, 97)
+size = Vector2(117, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvbjh"]
 size = Vector2(76.0331, 132.727)
@@ -272,7 +272,7 @@ shape = SubResource("RectangleShape2D_33gpj")
 disabled = true
 
 [node name="CollisionShape2D_buffalo" type="CollisionShape2D" parent="."]
-position = Vector2(-19.5, 40.5)
+position = Vector2(-15.5, 40.5)
 shape = SubResource("RectangleShape2D_wku6q")
 
 [node name="Collision" type="Area2D" parent="."]
